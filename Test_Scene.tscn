@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba16ct6g7gr3n"]
+
+[ext_resource type="Script" path="res://Test_Scene.cs" id="1_g4c3d"]
+[ext_resource type="Texture2D" uid="uid://bw1pavak1xa5r" path="res://icon.svg" id="2_3ln0k"]
+
+[node name="Test_Scene" type="Node2D"]
+script = ExtResource("1_g4c3d")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+texture = ExtResource("2_3ln0k")
+
+[node name="Click_Informer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(579, 376)
+texture = ExtResource("2_3ln0k")
