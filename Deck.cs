@@ -21,18 +21,13 @@ public partial class Deck : Node
     public override void _Ready()
     {
         Populate_Deck();
-		Shuffle_Deck();
-		//Print_Deck();
-		int aceS_index = Find_Card(new Card());
-		Card will_move_to_last = cards[aceS_index -1];
-		GD.Print(will_move_to_last + " will move to 52");
-		GD.Print(cards[aceS_index] + " is at " + (aceS_index + 1));
-
-		Cut_Deck_By_Card(cards[aceS_index]);
-		int last_card = Find_Card(will_move_to_last);
-		aceS_index = Find_Card(new Card());
-		GD.Print($"last card is {cards[last_card]} at {last_card + 1}");
-		GD.Print(cards[aceS_index] + " is at " + (aceS_index + 1));
+		//Shuffle_Deck();
+		Card middle_card = cards[26];
+		GD.Print(middle_card);
+		Cut_Deck_By_Card(middle_card);
+		//Cut_Deck_By_Position(26);
+		Print_Deck();
+		
     }
 
 	void Print_Deck()
@@ -58,18 +53,21 @@ public partial class Deck : Node
 
 	int Find_Card(Card desired_card)
 	{
-		return cards.FindIndex(desired_card.Is_Match);
+		return cards.FindIndex(desired_card.Equals);
 	}
 
 	void Cut_Deck_By_Card(Card card)
 	{
-		int cut_position = Find_Card(card) -1;
-		for (int i = cut_position; i >= 0; i--)
-		{
-			//TODO: this sucks ↓
-			Card card_ref = cards[0];
-			cards.RemoveAt(0);
-			cards.Add(card_ref);
-		}
+		int cut_position = Find_Card(card);
+		Cut_Deck_By_Position(cut_position);
 	}
+
+	void Cut_Deck_By_Position(int cut_position)
+	{
+		List<Card> cut_cards = cards.GetRange(0,cut_position);
+		cards.RemoveRange(0,cut_position);
+		cards.AddRange(cut_cards);
+		cut_position--;
+	}
+
 }
