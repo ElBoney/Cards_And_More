@@ -56,12 +56,6 @@ public partial class Card : Node
 		return Face_Name;
 	}
 
-	public bool Is_Match(Card c)
-	{
-		if (this == c){return true;}
-		return false;
-	}
-
     public override bool Equals(object obj)
     {
         if(obj is Card c)
