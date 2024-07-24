@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://fqtxly1vagxt"]
+
+[ext_resource type="Script" path="res://Card_Dealer.cs" id="1_2r7cf"]
+
+[node name="Card_Dealer" type="Node2D"]
+script = ExtResource("1_2r7cf")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(200, 300)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(600, 300)
+
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2(800, 300)
+
+[node name="Node2D5" type="Node2D" parent="."]
+position = Vector2(1000, 300)

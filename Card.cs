@@ -1,10 +1,7 @@
-using Godot;
+//using Godot;
 using System;
-using System.Collections;
-using System.Net.Security;
-using System.Runtime.CompilerServices;
 
-public partial class Card : Node
+public partial class Card
 {
 	public enum Suits
 	{
@@ -28,7 +25,7 @@ public partial class Card : Node
 	{
 		get
 		{
-			string value_name = "";
+			string value_name = null;
 			switch(value)
 			{
 				case 11:

@@ -1,0 +1,48 @@
+using Godot;
+using System;
+using System.Reflection.Metadata;
+
+public partial class Card_Dealer : Node2D
+{
+	Deck deck = new Deck();
+	
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		deck.Shuffle_Deck();
+		Print_Card(5);
+		Create_Hand();
+		Print_Card(0);
+	}
+
+	Card[] Draw_Cards(int how_many)
+	{
+		Card[] hand = new Card[how_many];
+		for(int i = 0; i< how_many; i++)
+		{
+			hand[i] = deck.cards[i];
+		}
+
+		return hand;
+	}
+
+	void Create_Hand()
+	{
+		Card[] hand = Draw_Cards(5);
+		deck.Cut_Deck_By_Position(5);
+		PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Card.tscn");
+		
+		for(int i = 0; i < 5; i++)
+		{
+			Node2D new_card = new_card_scene.Instantiate<Node2D>();
+			new_card.GetChild<Label>(0).Text = hand[i].ToString();
+			new_card.Position = GetChild<Node2D>(i).Position;
+			AddChild(new_card);
+		}
+	}
+
+	void Print_Card(int index)
+	{
+		GD.Print(deck.cards[index]);
+	}
+}

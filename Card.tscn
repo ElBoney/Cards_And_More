@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://n268oa70qpd3"]
+
+[ext_resource type="Texture2D" uid="uid://bw1pavak1xa5r" path="res://icon.svg" id="1_7228y"]
+
+[node name="Card" type="Sprite2D"]
+light_mask = 0
+position = Vector2(39.5, 89)
+scale = Vector2(1.61719, 2.39063)
+texture = ExtResource("1_7228y")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -59.0
+offset_right = -69.0
+offset_bottom = -71.0
+text = "Card Text"
+horizontal_alignment = 1
+autowrap_mode = 2
