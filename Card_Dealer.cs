@@ -28,6 +28,7 @@ public partial class Card_Dealer : Node2D
 
 	void Create_Hand()
 	{
+		Clear_Hand();
 		Card[] hand = Draw_Cards(5);
 		deck.Cut_Deck_By_Position(5);
 		PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Card.tscn");
@@ -37,7 +38,15 @@ public partial class Card_Dealer : Node2D
 			Node2D new_card = new_card_scene.Instantiate<Node2D>();
 			new_card.GetChild<Label>(0).Text = hand[i].ToString();
 			new_card.Position = GetChild<Node2D>(i).Position;
-			AddChild(new_card);
+			GetNode("Hand").AddChild(new_card);
+		}
+	}
+
+	void Clear_Hand()
+	{
+		foreach(Node child_card in GetNode("Hand").GetChildren())
+		{
+			child_card.QueueFree();
 		}
 	}
 
@@ -45,4 +54,12 @@ public partial class Card_Dealer : Node2D
 	{
 		GD.Print(deck.cards[index]);
 	}
+
+    public override void _Input(InputEvent @event)
+    {
+        if(@event.IsActionPressed("SpaceBar"))
+		{
+			Clear_Hand();
+		}
+    }
 }
