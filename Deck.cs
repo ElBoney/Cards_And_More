@@ -22,14 +22,6 @@ public partial class Deck
 		Populate_Deck();
 	}
 
-	// void Print_Deck()
-	// {
-	// 	foreach(Card c in cards)
-	// 	{
-	// 		GD.Print(c);
-	// 	}
-	// }
-
 	public void Shuffle_Deck()
 	{
 		int n = cards.Count;
@@ -59,7 +51,6 @@ public partial class Deck
 		List<Card> cut_cards = cards.GetRange(0,cut_position);
 		cards.RemoveRange(0,cut_position);
 		cards.AddRange(cut_cards);
-		cut_position--;
 	}
 
 }
