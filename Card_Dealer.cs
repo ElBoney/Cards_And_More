@@ -1,6 +1,4 @@
 using Godot;
-using System;
-using System.Reflection.Metadata;
 
 public partial class Card_Dealer : Node2D
 {
@@ -10,9 +8,7 @@ public partial class Card_Dealer : Node2D
 	public override void _Ready()
 	{
 		deck.Shuffle_Deck();
-		Print_Card(5);
 		Create_Hand();
-		Print_Card(0);
 	}
 
 	Card[] Draw_Cards(int how_many)
