@@ -14,6 +14,11 @@ public partial class Card
 	public Suits suit;
 	public int value;
 
+	Suits GetSuit()
+	{
+		return suit;
+	}
+
 	public Card(int value = 14, Suits suit = Suits.Spades)
 	{
 		
