@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
 
 public partial class Hand_Evaluator : Node
 {
-    protected enum hand_type
+    public enum hand_type
     {
         HighCard = 1,
         TwoKind,
@@ -19,7 +18,7 @@ public partial class Hand_Evaluator : Node
         RoyalFlush
     }
 
-    protected hand_type Evaluate_Hand(Card[] hand)
+    public hand_type Evaluate_Hand(Card[] hand)
     {
         hand = hand.OrderByDescending(card => card.value).ToArray();
         
