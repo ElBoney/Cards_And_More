@@ -1,21 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://n268oa70qpd3"]
+[gd_scene load_steps=5 format=3 uid="uid://n268oa70qpd3"]
 
 [ext_resource type="Texture2D" uid="uid://bw1pavak1xa5r" path="res://icon.svg" id="1_7228y"]
+[ext_resource type="Texture2D" uid="uid://bn0t0nhdcuoyr" path="res://toggled_icon.png" id="2_xhv0o"]
+[ext_resource type="Texture2D" uid="uid://7utny2qntdgg" path="res://highlighted_icon.png" id="3_0bkye"]
+[ext_resource type="Script" path="res://Card_Object.cs" id="4_qua54"]
 
-[node name="Card" type="Sprite2D"]
+[node name="Card" type="TextureButton"]
 light_mask = 0
-position = Vector2(39.5, 89)
-scale = Vector2(1.61719, 2.39063)
-texture = ExtResource("1_7228y")
+anchors_preset = -1
+anchor_right = 0.178
+anchor_bottom = 0.454
+offset_right = -205.056
+offset_bottom = -294.192
+scale = Vector2(1.6, 2.3)
+toggle_mode = true
+texture_normal = ExtResource("1_7228y")
+texture_pressed = ExtResource("2_xhv0o")
+texture_hover = ExtResource("3_0bkye")
+script = ExtResource("4_qua54")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -57.0
-offset_top = -59.0
-offset_right = -69.0
-offset_bottom = -71.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Card Text"
 horizontal_alignment = 1
 autowrap_mode = 2

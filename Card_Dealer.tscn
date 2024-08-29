@@ -5,20 +5,34 @@
 [node name="Card_Dealer" type="Node2D"]
 script = ExtResource("1_2r7cf")
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(200, 300)
+[node name="Hand_Container" type="HBoxContainer" parent="."]
+layout_direction = 2
+offset_left = 140.0
+offset_top = 311.0
+offset_right = 1186.0
+offset_bottom = 589.0
+alignment = 1
+metadata/_edit_group_ = true
 
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(400, 300)
+[node name="MarginContainer" type="MarginContainer" parent="Hand_Container"]
+custom_minimum_size = Vector2(206, 206)
+layout_mode = 2
 
-[node name="Node2D3" type="Node2D" parent="."]
-position = Vector2(600, 300)
+[node name="MarginContainer2" type="MarginContainer" parent="Hand_Container"]
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
 
-[node name="Node2D4" type="Node2D" parent="."]
-position = Vector2(800, 300)
+[node name="MarginContainer3" type="MarginContainer" parent="Hand_Container"]
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
 
-[node name="Node2D5" type="Node2D" parent="."]
-position = Vector2(1000, 300)
+[node name="MarginContainer4" type="MarginContainer" parent="Hand_Container"]
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="Hand_Container"]
+custom_minimum_size = Vector2(206, 0)
+layout_mode = 2
 
 [node name="Button" type="Button" parent="."]
 offset_left = 426.0
@@ -27,6 +41,21 @@ offset_right = 759.0
 offset_bottom = 109.0
 text = "New Hand"
 
-[node name="Hand" type="Node2D" parent="."]
+[node name="Button2" type="Button" parent="."]
+offset_left = 902.0
+offset_top = 44.0
+offset_right = 1066.0
+offset_bottom = 101.0
+text = "Redraw Cards"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 397.0
+offset_top = 542.0
+offset_right = 837.0
+offset_bottom = 625.0
+text = "Hand Type"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="Create_Hand"]
+[connection signal="pressed" from="Button2" to="." method="Redraw_Cards"]
