@@ -40,7 +40,6 @@ public partial class Hand_Evaluator : Node
         if(value > compare_value){return value;}
         value = compare_value;
 
-
         return value;
     }
 

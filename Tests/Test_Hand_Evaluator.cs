@@ -16,7 +16,7 @@ public partial class Test_Hand_Evaluator : Hand_Evaluator
 
     [Test] public void Test_Is_Straight_Five_Cards()
     {
-        Assert.IsFalse(Is_Straight(Create_Staight()), "Nonflush was returned true");
+        Assert.IsFalse(Is_Straight(Create_Staight()), "Nonstraight was returned true");
     }
 
     [Test] public void Test_Evaluate_Hand_Flush()
@@ -64,7 +64,7 @@ public partial class Test_Hand_Evaluator : Hand_Evaluator
         Assert.AreEqual(hand_type.Flush, Evaluate_Hand(Create_Flush()), "evaluated Flush wrong");
         Assert.AreEqual(hand_type.FullHouse, Evaluate_Hand(Create_Full_House()), "evaluated a Full House wrong");
         Assert.AreEqual(hand_type.FourKind, Evaluate_Hand(Create_Four_Kind()), "evaluated Four of a Kind wrong");
-        Assert.AreEqual(hand_type.StraightFlush, Evaluate_Hand(Create_Straight_Flush()), "evaluated High card wrong");
+        Assert.AreEqual(hand_type.StraightFlush, Evaluate_Hand(Create_Straight_Flush()), "evaluated Straight Flush wrong");
     }
 
     Card[] Create_Flush()

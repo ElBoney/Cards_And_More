@@ -6,7 +6,7 @@ public partial class Card_Dealer : Node2D
 {
 	Deck deck = new Deck();
 	Hand_Evaluator hand_evaluator = new Hand_Evaluator();
-	
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,10 +17,8 @@ public partial class Card_Dealer : Node2D
 	Card[] Draw_Cards(int how_many)
 	{
 		Card[] hand = new Card[how_many];
-		for(int i = 0; i< how_many; i++)
-		{
-			hand[i] = deck.cards[i];
-		}
+		for (int i = 0; i < how_many; i++)
+		{ hand[i] = deck.cards[i]; }
 
 		return hand;
 	}
@@ -31,8 +29,8 @@ public partial class Card_Dealer : Node2D
 		Card[] hand = Draw_Cards(5);
 		deck.Cut_Deck_By_Position(5);
 		PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Card.tscn");
-		
-		for(int i = 0; i < 5; i++)
+
+		for (int i = 0; i < 5; i++)
 		{
 			Card_Object new_card = new_card_scene.Instantiate<Card_Object>();
 			new_card.card = hand[i];
@@ -44,33 +42,28 @@ public partial class Card_Dealer : Node2D
 
 	void Clear_Hand()
 	{
-		foreach(Node child_container in GetNode("Hand_Container").GetChildren())
+		foreach (Node child_container in GetNode("Hand_Container").GetChildren())
 		{
-			if(child_container.GetChildCount() == 0) {continue;}
+			if (child_container.GetChildCount() == 0) { continue; }
 			child_container.GetChild(0).QueueFree();
 		}
 	}
 
-	void Print_Card(int index)
-	{
-		GD.Print(deck.cards[index]);
-	}
+	void Print_Card(int index) { GD.Print(deck.cards[index]); }
 
-    public override void _Input(InputEvent @event)
-    {
-        if(@event.IsActionPressed("SpaceBar"))
-		{
-			Clear_Hand();
-		}
-    }
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("SpaceBar"))
+		{ Clear_Hand(); }
+	}
 
 	public void Redraw_Cards()
 	{
 		List<Card> hand = new List<Card>();
-		foreach(Node card_container in GetNode("Hand_Container").GetChildren())
+		foreach (Node card_container in GetNode("Hand_Container").GetChildren())
 		{
 			Card_Object card = card_container.GetChild<Card_Object>(0);
-			if(card.ButtonPressed)
+			if (card.ButtonPressed)
 			{
 				card.QueueFree();
 				PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Card.tscn");
@@ -84,4 +77,6 @@ public partial class Card_Dealer : Node2D
 		}
 		GetNode<Label>("Label").Text = hand_evaluator.Evaluate_Hand(hand.ToArray<Card>()).ToString();
 	}
+
+	public void Shuffle_Deck() => deck.Shuffle_Deck();
 }

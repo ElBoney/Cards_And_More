@@ -48,6 +48,13 @@ offset_right = 1066.0
 offset_bottom = 101.0
 text = "Redraw Cards"
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 90.0
+offset_top = 30.0
+offset_right = 269.0
+offset_bottom = 103.0
+text = "Shuffle Deck"
+
 [node name="Label" type="Label" parent="."]
 offset_left = 397.0
 offset_top = 542.0
