@@ -13,12 +13,8 @@ public partial class Card
 	public Suits suit;
 	public int value;
 
-	Suits GetSuit()
-	{ return suit; }
-
 	public Card(int value = 14, Suits suit = Suits.Spades)
 	{
-
 		this.value = Math.Clamp(value, 2, 14);
 		this.suit = suit;
 	}
@@ -27,8 +23,8 @@ public partial class Card
 	{
 		get
 		{
-            string value_name;
-            switch (value)
+			string value_name;
+			switch (value)
 			{
 				case 11:
 					value_name = "Jack";
@@ -67,5 +63,7 @@ public partial class Card
 
 	public static bool operator ==(Card c1, Card c2) { return c1.Equals(c2); }
 	public static bool operator !=(Card c1, Card c2) { return !c1.Equals(c2); }
+	public override int GetHashCode()
+	{ return base.GetHashCode(); }
 
 }
