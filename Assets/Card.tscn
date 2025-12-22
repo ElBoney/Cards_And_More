@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bw1pavak1xa5r" path="res://icon.svg" id="1_7228y"]
 [ext_resource type="Texture2D" uid="uid://bn0t0nhdcuoyr" path="res://toggled_icon.png" id="2_xhv0o"]
 [ext_resource type="Texture2D" uid="uid://7utny2qntdgg" path="res://highlighted_icon.png" id="3_0bkye"]
-[ext_resource type="Script" path="res://Card_Object.cs" id="4_qua54"]
+[ext_resource type="Script" uid="uid://rtl7juyy75fo" path="res://Assets/Card_Object.cs" id="4_qua54"]
 
 [node name="Card" type="TextureButton"]
 light_mask = 0

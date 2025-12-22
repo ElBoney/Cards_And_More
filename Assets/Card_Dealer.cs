@@ -28,7 +28,7 @@ public partial class Card_Dealer : Node2D
 		Clear_Hand();
 		Card[] hand = Draw_Cards(5);
 		deck.Cut_Deck_By_Position(5);
-		PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Card.tscn");
+		PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Assets/Card.tscn");
 
 		for (int i = 0; i < 5; i++)
 		{
@@ -66,7 +66,7 @@ public partial class Card_Dealer : Node2D
 			if (card.ButtonPressed)
 			{
 				card.QueueFree();
-				PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Card.tscn");
+				PackedScene new_card_scene = ResourceLoader.Load<PackedScene>("res://Assets/Card.tscn");
 				Card_Object new_card = new_card_scene.Instantiate<Card_Object>();
 				new_card.card = deck.cards[0];
 				deck.Cut_Deck_By_Position(1);
