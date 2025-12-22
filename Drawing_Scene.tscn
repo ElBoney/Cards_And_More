@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cunb1k0xlxct6"]
+
+[ext_resource type="Script" uid="uid://bbtqe1eardtf0" path="res://Assets/Drawing_Board.cs" id="1_014qh"]
+[ext_resource type="Texture2D" uid="uid://bw1pavak1xa5r" path="res://icon.svg" id="1_e3nae"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.70796657, 0.7079665, 0.7079665, 1)
+script = ExtResource("1_014qh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e3nae")
