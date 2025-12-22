@@ -10,10 +10,6 @@ public partial class Drawing_Board : ColorRect
 	public override void _Ready()
 	{ sprite = GetNode<Sprite2D>("Sprite2D"); }
 
-	public override void _Process(double delta)
-	{
-	}
-
     public override void _Input(InputEvent @event)
     {
         if(@event is InputEventMouseMotion input)
